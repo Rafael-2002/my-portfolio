@@ -22,13 +22,22 @@
     <header>
         <nav>
             <div class="logo">RS</div>
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#experience">Experiência</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contacto</a></li>
-            </ul>
+            <div class="nav-content">
+                <ul class="nav-links">
+                    <li><a href="#home" data-translate="nav-home">Início</a></li>
+                    <li><a href="#about" data-translate="nav-about">Sobre</a></li>
+                    <li><a href="#experience" data-translate="nav-experience">Experiência</a></li>
+                    <li><a href="#projects" data-translate="nav-projects">Projetos</a></li>
+                    <li><a href="#contact" data-translate="nav-contact">Contacto</a></li>
+                </ul>
+                <div class="language-switcher">
+                    <div class="lang-toggle">
+                        <span class="lang-option" data-lang="pt">PT</span>
+                        <span class="lang-option" data-lang="en">EN</span>
+                        <div class="lang-slider"></div>
+                    </div>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -36,24 +45,24 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Rafael Silva</h1>
-            <p>Engenheiro Informático & Developer</p>
-            <a href="#projects" class="cta-button">Ver o Meu Trabalho</a>
+            <p data-translate="hero-subtitle">Engenheiro Informático & Developer</p>
+            <a href="#projects" class="cta-button" data-translate="hero-cta">Ver o Meu Trabalho</a>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="fade-in">
-        <h2>Sobre Mim</h2>
+        <h2 data-translate="about-title">Sobre Mim</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Sou o Rafael Silva, 22 anos, licenciado em Engenharia Informática. Atualmente desempenho funções em
+                <p data-translate="about-p1">Sou o Rafael Silva, 22 anos, licenciado em Engenharia Informática. Atualmente desempenho funções em
                     estágio profissional na CGI, onde participo no desenvolvimento e integração de soluções
                     tecnológicas.</p>
-                <p>A minha experiência nos Escoteiros contribuiu significativamente para o fortalecimento de
+                <p data-translate="about-p2">A minha experiência nos Escoteiros contribuiu significativamente para o fortalecimento de
                     competências
                     como liderança, espírito de equipe e resiliência, que aplico no meu percurso académico e
                     profissional.</p>
-                <p>Gosto de programação backend e tenho interesse em Inteligência Artificial. Tenho paixão
+                <p data-translate="about-p3">Gosto de programação backend e tenho interesse em Inteligência Artificial. Tenho paixão
                     por resolver problemas complexos e criar soluções inovadoras.</p>
             </div>
             <div class="about-image">
@@ -61,8 +70,8 @@
                     <div
                         style="width: 120px; height: 120px; background: linear-gradient(45deg, #00f5ff, #ff00f5); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
                         👨‍💻</div>
-                    <h3 style="text-align: center; margin-bottom: 15px;">Sempre Evoluindo</h3>
-                    <p style="text-align: center; opacity: 0.8;">Focado em crescimento profissional e aprendizagem
+                    <h3 style="text-align: center; margin-bottom: 15px;" data-translate="about-card-title">Sempre Evoluindo</h3>
+                    <p style="text-align: center; opacity: 0.8;" data-translate="about-card-text">Focado em crescimento profissional e aprendizagem
                         contínua de novas tecnologias.</p>
                 </div>
             </div>
@@ -71,7 +80,7 @@
 
     <!-- Experience Section -->
     <section id="experience" class="fade-in">
-        <h2>Experiência Profissional</h2>
+        <h2 data-translate="experience-title">Experiência Profissional</h2>
         <div class="experience-timeline">
             <div class="timeline-item">
                 <div class="timeline-date">2025 - Presente</div>
@@ -113,13 +122,13 @@
 
     <!-- Projects Section -->
     <section id="projects" class="fade-in">
-        <h2>Os Meus Projetos</h2>
+        <h2 data-translate="projects-title">Os Meus Projetos</h2>
         <div class="projects-grid">
             <div class="project-card" data-project="vulnerabilidades">
                 <div class="project-image">🛡️</div>
                 <div class="project-info">
-                    <h3>Sistema de Classificação de Vulnerabilidades</h3>
-                    <p>Desenvolvimento de um website em Django com integração de um modelo de Inteligência Artificial
+                    <h3 data-translate="project-vuln-title">Sistema de Classificação de Vulnerabilidades</h3>
+                    <p data-translate="project-vuln-desc">Desenvolvimento de um website em Django com integração de um modelo de Inteligência Artificial
                         para classificação automática de vulnerabilidades e atribuição de severidade.</p>
                     <div class="project-tags">
                         <span class="tag">Django</span>
@@ -133,8 +142,8 @@
             <div class="project-card" data-project="powerbi">
                 <div class="project-image">📊</div>
                 <div class="project-info">
-                    <h3>Dashboard PowerBI - OGMA</h3>
-                    <p>Aplicação completa para transformação de dados empresariais em insights acionáveis, com
+                    <h3 data-translate="project-powerbi-title">Dashboard PowerBI - OGMA</h3>
+                    <p data-translate="project-powerbi-desc">Aplicação completa para transformação de dados empresariais em insights acionáveis, com
                         dashboards interativos e monitorização em tempo real.</p>
                     <div class="project-tags">
                         <span class="tag">PowerBI</span>
@@ -148,8 +157,8 @@
             <div class="project-card" data-project="azure-api">
                 <div class="project-image">☁️</div>
                 <div class="project-info">
-                    <h3>API .NET com Azure</h3>
-                    <p>Desenvolvimento e integração de API robusta em .NET com Azure Cosmos DB, focada em escalabilidade
+                    <h3 data-translate="project-azure-title">API .NET com Azure</h3>
+                    <p data-translate="project-azure-desc">Desenvolvimento e integração de API robusta em .NET com Azure Cosmos DB, focada em escalabilidade
                         e performance para ambientes empresariais.</p>
                     <div class="project-tags">
                         <span class="tag">.NET</span>
@@ -163,8 +172,8 @@
             <div class="project-card" data-project="lp2">
                 <div class="project-image">🎮</div>
                 <div class="project-info">
-                    <h3>Projeto LP2 — The Night of the Living Deisi</h3>
-                    <p>Jogo desenvolvido em Java no âmbito da unidade curricular de Linguagens de Programação 2, com
+                    <h3 data-translate="project-lp2-title">Projeto LP2 — The Night of the Living Deisi</h3>
+                    <p data-translate="project-lp2-desc">Jogo desenvolvido em Java no âmbito da unidade curricular de Linguagens de Programação 2, com
                         foco em orientação a objetos, herança e modularidade.</p>
                     <div class="project-tags">
                         <span class="tag">Java</span>
@@ -178,8 +187,8 @@
             <div class="project-card" data-project="aed">
                 <div class="project-image">📊</div>
                 <div class="project-info">
-                    <h3>Projeto AED — DeisiWorldMeter</h3>
-                    <p>Aplicação Java educativa que processa dados demográficos (cidades, países, população) e fornece
+                    <h3 data-translate="project-aed-title">Projeto AED — DeisiWorldMeter</h3>
+                    <p data-translate="project-aed-desc">Aplicação Java educativa que processa dados demográficos (cidades, países, população) e fornece
                         visualizações/interações baseadas em filas.</p>
                     <div class="project-tags">
                         <span class="tag">Java</span>
@@ -194,10 +203,10 @@
 
     <!-- Contact Section -->
     <section id="contact" class="fade-in">
-        <h2>Vamos Trabalhar Juntos?</h2>
+        <h2 data-translate="contact-title">Vamos Trabalhar Juntos?</h2>
         <div class="contact-content">
             <div class="contact-intro">
-                <p>Estou sempre aberto a novas oportunidades e desafios interessantes. Como jovem profissional em início
+                <p data-translate="contact-intro">Estou sempre aberto a novas oportunidades e desafios interessantes. Como jovem profissional em início
                     de carreira, procuro projetos onde possa aplicar e expandir os meus conhecimentos em desenvolvimento
                     e tecnologia.</p>
 
@@ -206,8 +215,8 @@
                     <a href="assets/Rafael_Silva_CV.pdf" download="Rafael_Silva_CV.pdf" class="cv-download-btn">
                         <div class="cv-icon">📄</div>
                         <div class="cv-text">
-                            <span class="cv-title">Transferir CV</span>
-                            <span class="cv-subtitle">Curriculum Vitae completo</span>
+                            <span class="cv-title" data-translate="cv-title">Transferir CV</span>
+                            <span class="cv-subtitle" data-translate="cv-subtitle">Curriculum Vitae completo</span>
                         </div>
                         <div class="cv-arrow">⬇️</div>
                     </a>
@@ -217,8 +226,8 @@
             <div class="contact-grid">
                 <div class="contact-card">
                     <div class="contact-card-icon">✉️</div>
-                    <h3>Email</h3>
-                    <p>Para oportunidades profissionais e colaborações</p>
+                    <h3 data-translate="contact-email-title">Email</h3>
+                    <p data-translate="contact-email-desc">Para oportunidades profissionais e colaborações</p>
                     <a href="mailto:rafael.lourenco.silva@gmail.com" class="contact-link">
                         rafael.lourenco.silva@gmail.com
                     </a>
@@ -226,18 +235,18 @@
 
                 <div class="contact-card">
                     <div class="contact-card-icon">💼</div>
-                    <h3>LinkedIn</h3>
-                    <p>Conecte-se comigo profissionalmente</p>
-                    <a href="https://www.linkedin.com/in/rafael-silva-54a076232" class="contact-link" target="_blank">
+                    <h3 data-translate="contact-linkedin-title">LinkedIn</h3>
+                    <p data-translate="contact-linkedin-desc">Conecte-se comigo profissionalmente</p>
+                    <a href="https://www.linkedin.com/in/rafael-silva-54a076232" class="contact-link" target="_blank" data-translate="contact-linkedin-link">
                         Ver Perfil LinkedIn
                     </a>
                 </div>
 
                 <div class="contact-card">
                     <div class="contact-card-icon">🐙</div>
-                    <h3>GitHub</h3>
-                    <p>Explore os meus projetos e código</p>
-                    <a href="https://github.com/Rafael-2002" class="contact-link" target="_blank">
+                    <h3 data-translate="contact-github-title">GitHub</h3>
+                    <p data-translate="contact-github-desc">Explore os meus projetos e código</p>
+                    <a href="https://github.com/Rafael-2002" class="contact-link" target="_blank" data-translate="contact-github-link">
                         Ver Repositórios
                     </a>
                 </div>
@@ -250,30 +259,19 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-icon">🛡️</div>
-            <h3>Sistema de Classificação de Vulnerabilidades</h3>
-            <p><strong>Descrição:</strong> Este projecto representa o culminar da minha formação académica e consistiu
-                no
-                desenvolvimento de uma solução inovadora para monitorização e classificação automática de
-                vulnerabilidades de segurança informática.</p>
-            <p><strong>Objetivo:</strong> Criar uma aplicação web que integra <em>Automação Inteligente de Processos
-                    (IPA)</em> com <em>Modelos de Linguagem (LLM)</em>, permitindo a recolha contínua de
-                vulnerabilidades da API oficial do NVD, a sua categorização automática e a disponibilização de
-                dashboards interativos para equipas de segurança.</p>
-            <p><strong>Principais Funcionalidades:</strong></p>
+            <h3 data-translate="modal-vuln-title">Sistema de Classificação de Vulnerabilidades</h3>
+            <p><strong data-translate="modal-description">Descrição:</strong> <span data-translate="modal-vuln-desc">Este projeto representa o culminar da minha formação académica e consistiu no desenvolvimento de uma solução inovadora para monitorização e classificação automática de vulnerabilidades de segurança informática.</span></p>
+            <p><strong data-translate="modal-objective">Objetivo:</strong> <span data-translate="modal-vuln-objective">Criar uma aplicação web que integra Automação Inteligente de Processos (IPA) com Modelos de Linguagem (LLM), permitindo a recolha contínua de vulnerabilidades da API oficial do NVD, a sua categorização automática e a disponibilização de dashboards interativos para equipas de segurança.</span></p>
+            <p><strong data-translate="modal-features">Principais Funcionalidades:</strong></p>
             <ul>
-                <li>Extração automatizada de vulnerabilidades diretamente da API oficial do NVD</li>
-                <li>Classificação inteligente com IA, utilizando um LLM para atribuição automática de categorias</li>
-                <li>Consultas em linguagem natural, como: <em>"Quais são as vulnerabilidades críticas deste mês?"</em>
-                </li>
-                <li>Dashboard interativo com estatísticas, evolução temporal e categorias mais afetadas</li>
-                <li>Armazenamento em base de dados relacional para histórico e análises detalhadas</li>
-                <li>Sistema de início de sessão e personalização de preferências para relatórios adaptados ao utilizador
-                </li>
+                <li data-translate="modal-vuln-feature1">Extração automatizada de vulnerabilidades diretamente da API oficial do NVD</li>
+                <li data-translate="modal-vuln-feature2">Classificação inteligente com IA, utilizando um LLM para atribuição automática de categorias</li>
+                <li data-translate="modal-vuln-feature3">Consultas em linguagem natural, como: "Quais são as vulnerabilidades críticas deste mês?"</li>
+                <li data-translate="modal-vuln-feature4">Dashboard interativo com estatísticas, evolução temporal e categorias mais afetadas</li>
+                <li data-translate="modal-vuln-feature5">Armazenamento em base de dados relacional para histórico e análises detalhadas</li>
+                <li data-translate="modal-vuln-feature6">Sistema de início de sessão e personalização de preferências para relatórios adaptados ao utilizador</li>
             </ul>
-            <p><strong>Inovação e Impacto:</strong> Esta solução destaca-se pela sua proatividade, escalabilidade e
-                custo-eficiência, oferecendo às organizações uma alternativa acessível às plataformas comerciais de
-                cibersegurança. Automatiza tarefas repetitivas e morosas, ao mesmo tempo que apoia a tomada de decisão
-                estratégica, libertando equipas técnicas para atividades de maior valor acrescentado.</p>
+            <p><strong data-translate="modal-innovation">Inovação e Impacto:</strong> <span data-translate="modal-vuln-innovation">Esta solução destaca-se pela sua proatividade, escalabilidade e custo-eficiência, oferecendo às organizações uma alternativa acessível às plataformas comerciais de cibersegurança. Automatiza tarefas repetitivas e morosas, ao mesmo tempo que apoia a tomada de decisão estratégica, libertando equipas técnicas para atividades de maior valor acrescentado.</span></p>
             <div class="modal-tags">
                 <span class="modal-tag">Django</span>
                 <span class="modal-tag">Python</span>
@@ -287,7 +285,7 @@
                     <path
                         d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                 </svg>
-                Ver no GitHub
+                <span data-translate="github-btn">Ver no GitHub</span>
             </a>
         </div>
     </div>
@@ -296,21 +294,18 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-icon">📊</div>
-            <h3>Dashboard PowerBI - OGMA</h3>
-            <p><strong>Estágio Curricular - OGMA (2020)</strong></p>
-            <p>Durante o meu estágio curricular na OGMA, desenvolvi uma solução completa de Business Intelligence para
-                transformar dados empresariais em insights acionáveis.</p>
-            <p><strong>Contexto:</strong> A empresa necessitava de uma forma mais eficaz de monitorizar performance e
-                tomar decisões baseadas em dados em tempo real.</p>
-            <p><strong>Solução desenvolvida:</strong></p>
-            <p>• Criação de dashboards interativos com indicadores de desempenho (KPIs) personalizados<br>
+            <h3 data-translate="modal-powerbi-title">Dashboard PowerBI - OGMA</h3>
+            <p><strong data-translate="modal-powerbi-internship">Estágio Curricular - OGMA (2020)</strong></p>
+            <p data-translate="modal-powerbi-intro">Durante o meu estágio curricular na OGMA, desenvolvi uma solução completa de Business Intelligence para transformar dados empresariais em insights acionáveis.</p>
+            <p><strong data-translate="modal-context">Contexto:</strong> <span data-translate="modal-powerbi-context">A empresa necessitava de uma forma mais eficaz de monitorizar performance e tomar decisões baseadas em dados em tempo real.</span></p>
+            <p><strong data-translate="modal-solution">Solução desenvolvida:</strong></p>
+            <p data-translate="modal-powerbi-solution">• Criação de dashboards interativos com indicadores de desempenho (KPIs) personalizados<br>
                 • Integração de múltiplas fontes de dados empresariais<br>
                 • Monitorização em tempo real de métricas críticas de negócio<br>
                 • Modelação de dados para garantir qualidade e consistência da informação<br>
                 • Relatórios visuais automatizados para diferentes departamentos<br>
                 • Interface intuitiva para utilizadores não técnicos</p>
-            <p>O projeto resultou numa significativa melhoria na capacidade de análise e tomada de decisão da empresa,
-                permitindo identificar tendências e oportunidades de otimização que antes não eram visíveis.</p>
+            <p data-translate="modal-powerbi-result">O projeto resultou numa significativa melhoria na capacidade de análise e tomada de decisão da empresa, permitindo identificar tendências e oportunidades de otimização que antes não eram visíveis.</p>
             <div class="modal-tags">
                 <span class="modal-tag">PowerBI</span>
                 <span class="modal-tag">Data Visualization</span>
@@ -326,23 +321,19 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-icon">☁️</div>
-            <h3>API .NET com Azure Cosmos DB</h3>
-            <p><strong>Estágio Profissional - CGI Group (2025-Presente)</strong></p>
-            <p>Como parte do meu estágio profissional na CGI Group, estou envolvido no desenvolvimento e integração de
-                uma API robusta em .NET com Azure Cosmos DB.</p>
-            <p><strong>Objetivo:</strong> Criar uma solução escalável e performante para comunicação segura entre
-                aplicações e base de dados na cloud, adequada para ambientes empresariais de grande escala.</p>
-            <p><strong>Principais responsabilidades:</strong></p>
-            <p>• Desenvolvimento de API RESTful em .NET com arquitetura moderna<br>
+            <h3 data-translate="modal-azure-title">API .NET com Azure Cosmos DB</h3>
+            <p><strong data-translate="modal-azure-internship">Estágio Profissional - CGI Group (2025-Presente)</strong></p>
+            <p data-translate="modal-azure-intro">Como parte do meu estágio profissional na CGI Group, estou envolvido no desenvolvimento e integração de uma API robusta em .NET com Azure Cosmos DB.</p>
+            <p><strong data-translate="modal-objective">Objetivo:</strong> <span data-translate="modal-azure-objective">Criar uma solução escalável e performante para comunicação segura entre aplicações e base de dados na cloud, adequada para ambientes empresariais de grande escala.</span></p>
+            <p><strong data-translate="modal-responsibilities">Principais responsabilidades:</strong></p>
+            <p data-translate="modal-azure-responsibilities">• Desenvolvimento de API RESTful em .NET com arquitetura moderna<br>
                 • Integração com Azure Cosmos DB para armazenamento NoSQL de alta performance<br>
                 • Garantia de comunicação segura entre aplicações e base de dados<br>
                 • Colaboração na modelação da base de dados otimizada para escalabilidade<br>
                 • Definição de requisitos de performance para suportar operações empresariais<br>
                 • Implementação de testes funcionais e de integração<br>
                 • Documentação técnica detalhada para equipas internas</p>
-            <p>Este projeto permite-me aplicar conhecimentos de cloud computing, arquitetura de microservices e
-                desenvolvimento enterprise-grade, contribuindo para soluções que impactam diretamente as operações de
-                grandes empresas.</p>
+            <p data-translate="modal-azure-impact">Este projeto permite-me aplicar conhecimentos de cloud computing, arquitetura de microservices e desenvolvimento enterprise-grade, contribuindo para soluções que impactam diretamente as operações de grandes empresas.</p>
             <div class="modal-tags">
                 <span class="modal-tag">.NET</span>
                 <span class="modal-tag">Azure Cosmos DB</span>
@@ -359,21 +350,17 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-icon">🎮</div>
-            <h3>Projeto LP2 — The Night of the Living Deisi</h3>
-            <p><strong>Descrição:</strong> Protótipo de jogo em Java desenvolvido no âmbito da unidade curricular de
-                Linguagens de Programação II. O projeto explora conceitos fundamentais de programação orientada a
-                objetos, como herança, encapsulamento e polimorfismo, aplicados num ambiente lúdico.</p>
-            <p><strong>Estrutura do Projeto:</strong></p>
+            <h3 data-translate="modal-lp2-title">Projeto LP2 — The Night of the Living Deisi</h3>
+            <p><strong data-translate="modal-description">Descrição:</strong> <span data-translate="modal-lp2-desc">Protótipo de jogo em Java desenvolvido no âmbito da unidade curricular de Linguagens de Programação II. O projeto explora conceitos fundamentais de programação orientada a objetos, como herança, encapsulamento e polimorfismo, aplicados num ambiente lúdico.</span></p>
+            <p><strong data-translate="modal-structure">Estrutura do Projeto:</strong></p>
             <ul>
-                <li><strong>Tabuleiro</strong>: classe principal que gere jogadores, equipamentos e portas.</li>
-                <li><strong>Jogador</strong>: classe base com subclasses como <em>Zombie</em> e <em>Adulto</em>.</li>
-                <li><strong>Equipamento</strong>: inclui itens como <em>Escudo</em> e <em>Espada</em>.</li>
-                <li><strong>Porta</strong>: funciona como <em>Safe Haven</em>, protegendo os jogadores que entram nela.
-                </li>
-                <li><strong>Diagrama UML</strong>: representa a estrutura e relações entre classes.</li>
+                <li data-translate="modal-lp2-structure1"><strong>Tabuleiro</strong>: classe principal que gere jogadores, equipamentos e portas.</li>
+                <li data-translate="modal-lp2-structure2"><strong>Jogador</strong>: classe base com subclasses como <em>Zombie</em> e <em>Adulto</em>.</li>
+                <li data-translate="modal-lp2-structure3"><strong>Equipamento</strong>: inclui itens como <em>Escudo</em> e <em>Espada</em>.</li>
+                <li data-translate="modal-lp2-structure4"><strong>Porta</strong>: funciona como <em>Safe Haven</em>, protegendo os jogadores que entram nela.</li>
+                <li data-translate="modal-lp2-structure5"><strong>Diagrama UML</strong>: representa a estrutura e relações entre classes.</li>
             </ul>
-            <p><strong>Recursos Extra:</strong> O repositório inclui um <em>diagrama UML</em> e um <a
-                    href="https://youtu.be/b_oXaFSem04" target="_blank">vídeo demonstrativo no YouTube</a>.</p>
+            <p><strong data-translate="modal-extra-resources">Recursos Extra:</strong> <span data-translate="modal-lp2-extra">O repositório inclui um diagrama UML e um <a href="https://youtu.be/b_oXaFSem04" target="_blank">vídeo demonstrativo no YouTube</a>.</span></p>
             <div class="modal-tags">
                 <span class="modal-tag">Java</span>
                 <span class="modal-tag">OOP</span>
@@ -385,7 +372,7 @@
                     <path
                         d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                 </svg>
-                Ver no GitHub
+                <span data-translate="github-btn">Ver no GitHub</span>
             </a>
         </div>
     </div>
@@ -394,22 +381,16 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-icon">📊</div>
-            <h3>Projeto AED — DeisiWorldMeter</h3>
-            <p><strong>Descrição:</strong> Projeto académico desenvolvido em Java na disciplina de Algoritmos e
-                Estruturas de Dados (AED), com foco no tratamento e visualização de dados demográficos provenientes de
-                ficheiros CSV.</p>
-            <p><strong>Componentes do Projeto:</strong></p>
+            <h3 data-translate="modal-aed-title">Projeto AED — DeisiWorldMeter</h3>
+            <p><strong data-translate="modal-description">Descrição:</strong> <span data-translate="modal-aed-desc">Projeto académico desenvolvido em Java na disciplina de Algoritmos e Estruturas de Dados (AED), com foco no tratamento e visualização de dados demográficos provenientes de ficheiros CSV.</span></p>
+            <p><strong data-translate="modal-components">Componentes do Projeto:</strong></p>
             <ul>
-                <li>Leitura e processamento de ficheiros CSV: <code>cidades.csv</code>, <code>paises.csv</code>,
-                    <code>populacao.csv</code>.
-                </li>
-                <li>Classe principal na estrutura `src/pt/ulusofona/aed/deisiworldmeter` que provavelmente implementa
-                    estruturas como filas ou listas encadeadas (AED).</li>
-                <li>Objetivo: cálculo, visualização ou manipulação de dados populacionais e demográficos.</li>
-                <li><strong>Demo em vídeo:</strong> disponível no YouTube.</li>
+                <li data-translate="modal-aed-component1">Leitura e processamento de ficheiros CSV: <code>cidades.csv</code>, <code>paises.csv</code>, <code>populacao.csv</code>.</li>
+                <li data-translate="modal-aed-component2">Classe principal na estrutura `src/pt/ulusofona/aed/deisiworldmeter` que provavelmente implementa estruturas como filas ou listas encadeadas (AED).</li>
+                <li data-translate="modal-aed-component3">Objetivo: cálculo, visualização ou manipulação de dados populacionais e demográficos.</li>
+                <li data-translate="modal-aed-component4"><strong>Demo em vídeo:</strong> disponível no YouTube.</li>
             </ul>
-            <p><strong>Recursos Extra:</strong> Demonstração em vídeo: <a href="https://youtu.be/7SM6i9sqWx0"
-                    target="_blank">Ver no YouTube</a>.</p>
+            <p><strong data-translate="modal-extra-resources">Recursos Extra:</strong> <span data-translate="modal-aed-extra">Demonstração em vídeo: <a href="https://youtu.be/7SM6i9sqWx0" target="_blank">Ver no YouTube</a>.</span></p>
             <div class="modal-tags">
                 <span class="modal-tag">Java</span>
                 <span class="modal-tag">Data Processing</span>
@@ -421,14 +402,14 @@
                     <path
                         d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                 </svg>
-                Ver no GitHub
+                <span data-translate="github-btn">Ver no GitHub</span>
             </a>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; Feito por Rafael Silva ❤️</p>
+        <p>&copy; <span data-translate="footer-text">Feito por Rafael Silva ❤️</span></p>
     </footer>
 
     <script src="script.js"></script>
