@@ -55,6 +55,12 @@ nav {
     align-items: center;
 }
 
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .logo {
     font-size: 24px;
     font-weight: bold;
@@ -96,6 +102,55 @@ nav {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+/* ===== LANGUAGE SWITCHER ===== */
+.language-switcher {
+    margin-left: 20px;
+}
+
+.lang-toggle {
+    position: relative;
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 4px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+}
+
+.lang-option {
+    position: relative;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2;
+    min-width: 28px;
+    text-align: center;
+}
+
+.lang-option.active {
+    color: white;
+}
+
+.lang-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: linear-gradient(45deg, #00f5ff, #ff00f5);
+    border-radius: 16px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+.lang-toggle.en .lang-slider {
+    transform: translateX(100%);
 }
 
 /* ===== HERO SECTION ===== */
@@ -698,6 +753,24 @@ footer {
     
     .nav-links {
         display: none;
+    }
+    
+    .nav-content {
+        gap: 15px;
+    }
+    
+    .language-switcher {
+        margin-left: 0;
+    }
+    
+    .lang-toggle {
+        padding: 3px;
+    }
+    
+    .lang-option {
+        padding: 4px 8px;
+        font-size: 0.75rem;
+        min-width: 24px;
     }
     
     section {
