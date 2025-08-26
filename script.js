@@ -174,3 +174,80 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ===== CV DOWNLOAD FUNCTIONALITY =====
+document.addEventListener('DOMContentLoaded', function() {
+    const cvDownloadBtn = document.querySelector('.cv-download-btn');
+    
+    if (cvDownloadBtn) {
+        cvDownloadBtn.addEventListener('click', function(e) {
+            // Add visual feedback
+            const originalText = this.querySelector('.cv-title').textContent;
+            const titleElement = this.querySelector('.cv-title');
+            
+            // Check if file exists (basic check)
+            fetch(this.href, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        titleElement.textContent = 'A transferir...';
+                        setTimeout(() => {
+                            titleElement.textContent = 'Transferido!';
+                            setTimeout(() => {
+                                titleElement.textContent = originalText;
+                            }, 2000);
+                        }, 500);
+                    } else {
+                        e.preventDefault();
+                        titleElement.textContent = 'CV não encontrado';
+                        titleElement.style.color = '#ff6b6b';
+                        setTimeout(() => {
+                            titleElement.textContent = originalText;
+                            titleElement.style.color = '';
+                        }, 3000);
+                        
+                        // Show alert with instructions
+                        alert('CV não encontrado!\n\nPor favor:\n1. Adicione o ficheiro "Rafael_Silva_CV.pdf" na pasta "assets"\n2. Certifique-se de que o ficheiro está no formato PDF');
+                    }
+                })
+                .catch(() => {
+                    e.preventDefault();
+                    titleElement.textContent = 'CV não disponível';
+                    titleElement.style.color = '#ff6b6b';
+                    setTimeout(() => {
+                        titleElement.textContent = originalText;
+                        titleElement.style.color = '';
+                    }, 3000);
+                });
+        });
+        
+        // Add hover effect enhancement
+        cvDownloadBtn.addEventListener('mouseenter', function() {
+            this.querySelector('.cv-arrow').style.transform = 'translateY(5px)';
+        });
+        
+        cvDownloadBtn.addEventListener('mouseleave', function() {
+            this.querySelector('.cv-arrow').style.transform = 'translateY(0)';
+        });
+    }
+});
+
+// ===== CONTACT CARDS ANIMATION =====
+document.addEventListener('DOMContentLoaded', function() {
+    const contactCards = document.querySelectorAll('.contact-card');
+    
+    contactCards.forEach((card, index) => {
+        // Staggered animation on scroll
+        card.style.animationDelay = `${index * 0.1}s`;
+        
+        // Enhanced hover effects
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-15px) scale(1.02)';
+            this.querySelector('.contact-card-icon').style.transform = 'scale(1.2) rotate(10deg)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.querySelector('.contact-card-icon').style.transform = 'scale(1) rotate(0deg)';
+        });
+    });
+});
