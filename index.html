@@ -1,418 +1,439 @@
 <!DOCTYPE html>
 <html lang="pt">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafael Silva - Engenheiro Informático & Developer</title>
-    <meta name="description"
-        content="Rafael Silva - Engenheiro Informático & Developer especializado em .NET, Python, Azure e Machine Learning">
-    <meta name="keywords" content="rafael silva, developer, engenheiro informático, portugal, .net, python, azure">
-    <meta property="og:title" content="Rafael Silva - Portfolio">
-    <meta property="og:description" content="Engenheiro Informático & Developer">
-
+    <title>Rafael Silva — Software Developer</title>
+    <meta name="description" content="Rafael Silva — Software Developer specializing in Java backend, REST APIs and AI-powered systems.">
+    <meta name="keywords" content="rafael silva, software developer, java, python, backend, portugal, AI">
+    <meta property="og:title" content="Rafael Silva — Software Developer">
+    <meta property="og:description" content="Software Developer building end-to-end systems with Java, Python & AI">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Animated background -->
-    <div class="bg-particles" id="particles"></div>
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">RS</div>
-            <div class="nav-content">
-                <ul class="nav-links">
-                    <li><a href="#home" data-translate="nav-home">Início</a></li>
-                    <li><a href="#about" data-translate="nav-about">Sobre</a></li>
-                    <li><a href="#experience" data-translate="nav-experience">Experiência</a></li>
-                    <li><a href="#projects" data-translate="nav-projects">Projetos</a></li>
-                    <li><a href="#contact" data-translate="nav-contact">Contacto</a></li>
-                </ul>
-                <div class="language-switcher">
-                    <div class="lang-toggle">
-                        <span class="lang-option" data-lang="pt">PT</span>
-                        <span class="lang-option" data-lang="en">EN</span>
-                        <div class="lang-slider"></div>
-                    </div>
-                </div>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Aurora Background -->
+    <div class="aurora" aria-hidden="true">
+        <div class="aurora-orb aurora-orb-1"></div>
+        <div class="aurora-orb aurora-orb-2"></div>
+        <div class="aurora-orb aurora-orb-3"></div>
+    </div>
+
+    <!-- ======= NAVIGATION ======= -->
+    <header id="header">
+        <nav class="nav">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>RS<span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about"      class="nav-link" data-translate="nav-about">Sobre</a></li>
+                <li><a href="#skills"     class="nav-link" data-translate="nav-skills">Skills</a></li>
+                <li><a href="#experience" class="nav-link" data-translate="nav-experience">Experiência</a></li>
+                <li><a href="#projects"   class="nav-link" data-translate="nav-projects">Projetos</a></li>
+                <li><a href="#contact"    class="nav-link" data-translate="nav-contact">Contacto</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+                    <span id="langText">EN</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#about"      data-translate="nav-about">Sobre</a></li>
+            <li><a href="#skills"     data-translate="nav-skills">Skills</a></li>
+            <li><a href="#experience" data-translate="nav-experience">Experiência</a></li>
+            <li><a href="#projects"   data-translate="nav-projects">Projetos</a></li>
+            <li><a href="#contact"    data-translate="nav-contact">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- ======= HERO ======= -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Rafael Silva</h1>
-            <p data-translate="hero-subtitle">Engenheiro Informático & Developer</p>
-            <a href="#projects" class="cta-button" data-translate="hero-cta">Ver o Meu Trabalho</a>
+            <h1 class="hero-name">Rafael Silva</h1>
+
+            <div class="hero-role">
+                <span class="role-prefix" data-translate="hero-role-prefix">Sou </span><span
+                    class="typewriter" id="typewriter"></span><span class="cursor-blink">|</span>
+            </div>
+
+            <p class="hero-bio" data-translate="hero-bio">
+                Software Developer com foco em backend Java, REST APIs e sistemas alimentados por IA.
+                Construo soluções de ponta a ponta com impacto real.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary" data-translate="hero-cta-primary">Ver Projetos</a>
+                <a href="#contact"  class="btn btn-ghost"   data-translate="hero-cta-secondary">Contactar</a>
+            </div>
+
+            <div class="hero-socials">
+                <a href="https://github.com/Rafael-2002" target="_blank" class="social-link" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/rafael-silva-developer/" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="mailto:rafael.lourenco.silva@gmail.com" class="social-link" aria-label="Email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Code block visual -->
+        <div class="hero-visual" aria-hidden="true">
+            <div class="code-block">
+                <div class="code-header">
+                    <div class="code-dots"><span></span><span></span><span></span></div>
+                    <span class="code-filename">rafael.config.ts</span>
+                </div>
+                <pre class="code-content"><code><span class="ck">const</span> <span class="cv">rafael</span> = {
+  <span class="ckey">role</span>:     <span class="cs">"Software Developer"</span>,
+  <span class="ckey">location</span>: <span class="cs">"Portugal 🇵🇹"</span>,
+  <span class="ckey">stack</span>: [
+    <span class="cs">"Java"</span>, <span class="cs">"Python"</span>,
+    <span class="cs">"Kotlin"</span>, <span class="cs">"React"</span>
+  ],
+  <span class="ckey">focus</span>:    <span class="cs">"Backend + AI"</span>
+};</code></pre>
+            </div>
+        </div>
+
+        <div class="scroll-hint" aria-hidden="true">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            <span data-translate="scroll-hint">scroll</span>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="fade-in">
-        <h2 data-translate="about-title">Sobre Mim</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p data-translate="about-p1">Sou o Rafael Silva, 22 anos, licenciado em Engenharia Informática. Atualmente desempenho funções em
-                    estágio profissional na CGI, onde participo no desenvolvimento e integração de soluções
-                    tecnológicas.</p>
-                <p data-translate="about-p2">A minha experiência nos Escoteiros contribuiu significativamente para o fortalecimento de
-                    competências
-                    como liderança, espírito de equipe e resiliência, que aplico no meu percurso académico e
-                    profissional.</p>
-                <p data-translate="about-p3">Gosto de programação backend e tenho interesse em Inteligência Artificial. Tenho paixão
-                    por resolver problemas complexos e criar soluções inovadoras.</p>
-            </div>
-            <div class="about-image">
-                <div class="profile-card">
-                    <div
-                        style="width: 120px; height: 120px; background: linear-gradient(45deg, #00f5ff, #ff00f5); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
-                        👨‍💻</div>
-                    <h3 style="text-align: center; margin-bottom: 15px;" data-translate="about-card-title">Sempre Evoluindo</h3>
-                    <p style="text-align: center; opacity: 0.8;" data-translate="about-card-text">Focado em crescimento profissional e aprendizagem
-                        contínua de novas tecnologias.</p>
+    <!-- ======= ABOUT ======= -->
+    <section id="about" class="section reveal">
+        <div class="section-inner">
+            <div class="section-label" data-translate="about-label">// sobre mim</div>
+            <h2 class="section-title" data-translate="about-title">Quem sou eu</h2>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <p data-translate="about-p1">Sou o <strong>Rafael Silva</strong>, Software Developer com licenciatura em Engenharia Informática pela Universidade Lusófona. Atualmente trabalho na <strong>Mooddie Digital</strong>, onde desenvolvo e mantenho uma aplicação web empresarial de grande escala com foco em Java backend.</p>
+                    <p data-translate="about-p2">Tenho experiência prática a construir sistemas de ponta a ponta — desde <strong>pipelines de dados automatizados</strong> e <strong>integração de LLMs</strong> até REST APIs escaláveis na cloud. A minha paixão está no backend e em aplicações alimentadas por IA.</p>
+                    <p data-translate="about-p3">Fora do código, os <strong>Escoteiros</strong> moldaram a minha forma de trabalhar em equipa e de liderar — valores que trago para cada projeto.</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="fade-in">
-        <h2 data-translate="experience-title">Experiência Profissional</h2>
-        <div class="experience-timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">2025 - Presente</div>
-                <div class="timeline-content">
-                    <h3>Estágio Profissional - CGI Group</h3>
-                    <p>Desenvolvimento e integração de uma API em .NET com Azure Cosmos DB, garantindo comunicação
-                        segura entre aplicações e base de dados na cloud.</p>
-                    <p>Colaboração na modelação da base de dados e na definição de requisitos de escalabilidade e
-                        desempenho para suportar operações de empresas.</p>
-                    <p>Testes funcionais e de integração; documentação técnica para equipas internas.</p>
-                    <div class="timeline-tags">
-                        <span class="tag">.NET</span>
-                        <span class="tag">Azure</span>
-                        <span class="tag">Cosmos DB</span>
-                        <span class="tag">API Development</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-date">2020 - 2020</div>
-                <div class="timeline-content">
-                    <h3>Estágio Curricular - OGMA</h3>
-                    <p>Desenvolvimento de uma aplicação em PowerBI para transformar dados empresariais em insights
-                        acionáveis. Criação de dashboards interativos com indicadores de desempenho (KPIs).</p>
-                    <p>Monitorização em tempo real incluindo integração de múltiplas fontes de dados, modelação para
-                        garantir qualidade da informação e criação de relatórios visuais para diferentes departamentos.
-                    </p>
-                    <div class="timeline-tags">
-                        <span class="tag">PowerBI</span>
-                        <span class="tag">Data Analysis</span>
-                        <span class="tag">KPIs</span>
-                        <span class="tag">Dashboards</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="fade-in">
-        <h2 data-translate="projects-title">Os Meus Projetos</h2>
-        <div class="projects-grid">
-            <div class="project-card" data-project="vulnerabilidades">
-                <div class="project-image">🛡️</div>
-                <div class="project-info">
-                    <h3 data-translate="project-vuln-title">Sistema de Classificação de Vulnerabilidades</h3>
-                    <p data-translate="project-vuln-desc">Desenvolvimento de um website em Django com integração de um modelo de Inteligência Artificial
-                        para classificação automática de vulnerabilidades e atribuição de severidade.</p>
-                    <div class="project-tags">
-                        <span class="tag">Django</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Cybersecurity</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card" data-project="powerbi">
-                <div class="project-image">📊</div>
-                <div class="project-info">
-                    <h3 data-translate="project-powerbi-title">Dashboard PowerBI - OGMA</h3>
-                    <p data-translate="project-powerbi-desc">Aplicação completa para transformação de dados empresariais em insights acionáveis, com
-                        dashboards interativos e monitorização em tempo real.</p>
-                    <div class="project-tags">
-                        <span class="tag">PowerBI</span>
-                        <span class="tag">Data Visualization</span>
-                        <span class="tag">Business Intelligence</span>
-                        <span class="tag">KPIs</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card" data-project="azure-api">
-                <div class="project-image">☁️</div>
-                <div class="project-info">
-                    <h3 data-translate="project-azure-title">API .NET com Azure</h3>
-                    <p data-translate="project-azure-desc">Desenvolvimento e integração de API robusta em .NET com Azure Cosmos DB, focada em escalabilidade
-                        e performance para ambientes empresariais.</p>
-                    <div class="project-tags">
-                        <span class="tag">.NET</span>
-                        <span class="tag">Azure Cosmos DB</span>
-                        <span class="tag">Cloud Computing</span>
-                        <span class="tag">Microservices</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card" data-project="lp2">
-                <div class="project-image">🎮</div>
-                <div class="project-info">
-                    <h3 data-translate="project-lp2-title">Projeto LP2 — The Night of the Living Deisi</h3>
-                    <p data-translate="project-lp2-desc">Jogo desenvolvido em Java no âmbito da unidade curricular de Linguagens de Programação 2, com
-                        foco em orientação a objetos, herança e modularidade.</p>
-                    <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">OOP</span>
-                        <span class="tag">Game Dev</span>
-                        <span class="tag">University Project</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card" data-project="aed">
-                <div class="project-image">📊</div>
-                <div class="project-info">
-                    <h3 data-translate="project-aed-title">Projeto AED — DeisiWorldMeter</h3>
-                    <p data-translate="project-aed-desc">Aplicação Java educativa que processa dados demográficos (cidades, países, população) e fornece
-                        visualizações/interações baseadas em filas.</p>
-                    <div class="project-tags">
-                        <span class="tag">Java</span>
-                        <span class="tag">AED</span>
-                        <span class="tag">Data Processing</span>
-                        <span class="tag">University Project</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="fade-in">
-        <h2 data-translate="contact-title">Vamos Trabalhar Juntos?</h2>
-        <div class="contact-content">
-            <div class="contact-intro">
-                <p data-translate="contact-intro">Estou sempre aberto a novas oportunidades e desafios interessantes. Como jovem profissional em início
-                    de carreira, procuro projetos onde possa aplicar e expandir os meus conhecimentos em desenvolvimento
-                    e tecnologia.</p>
-
-                <!-- CV Download Button -->
-                <div class="cv-download-section">
-                    <a href="assets/Rafael_Silva_CV.pdf" download="Rafael_Silva_CV.pdf" class="cv-download-btn">
-                        <div class="cv-icon">📄</div>
-                        <div class="cv-text">
-                            <span class="cv-title" data-translate="cv-title">Transferir CV</span>
-                            <span class="cv-subtitle" data-translate="cv-subtitle">Curriculum Vitae completo</span>
+                <div class="about-highlights">
+                    <div class="highlight-card">
+                        <div class="hi-icon">🎓</div>
+                        <div class="hi-text">
+                            <strong data-translate="about-h1-title">Licenciatura em Engenharia Informática</strong>
+                            <span data-translate="about-h1-sub">Universidade Lusófona · 2021–2025</span>
                         </div>
-                        <div class="cv-arrow">⬇️</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="hi-icon">💼</div>
+                        <div class="hi-text">
+                            <strong data-translate="about-h2-title">Software Developer @ Mooddie Digital</strong>
+                            <span data-translate="about-h2-sub">Nov 2025 – Presente</span>
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="hi-icon">🌍</div>
+                        <div class="hi-text">
+                            <strong data-translate="about-h3-title">Línguas</strong>
+                            <span data-translate="about-h3-sub">Português (Nativo) · Inglês (Avançado) · Espanhol (Básico)</span>
+                        </div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="hi-icon">🤖</div>
+                        <div class="hi-text">
+                            <strong data-translate="about-h4-title">Área de Interesse</strong>
+                            <span data-translate="about-h4-sub">Backend Engineering & AI-powered Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= SKILLS ======= -->
+    <section id="skills" class="section reveal">
+        <div class="section-inner">
+            <div class="section-label" data-translate="skills-label">// tecnologias</div>
+            <h2 class="section-title" data-translate="skills-title">Stack & Ferramentas</h2>
+
+            <div class="skills-grid">
+                <div class="skill-group reveal-child">
+                    <h3 class="skill-group-title" data-translate="skills-advanced">Avançado</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag st-adv">Java</span>
+                        <span class="skill-tag st-adv">Python</span>
+                        <span class="skill-tag st-adv">Kotlin</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal-child">
+                    <h3 class="skill-group-title" data-translate="skills-intermediate">Intermédio</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag st-mid">C</span>
+                        <span class="skill-tag st-mid">SQL</span>
+                        <span class="skill-tag st-mid">HTML / CSS</span>
+                        <span class="skill-tag st-mid">Django</span>
+                        <span class="skill-tag st-mid">.NET / C#</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal-child">
+                    <h3 class="skill-group-title" data-translate="skills-beginner">Iniciante</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag st-beg">PHP</span>
+                        <span class="skill-tag st-beg">Flask</span>
+                        <span class="skill-tag st-beg">C++</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal-child">
+                    <h3 class="skill-group-title" data-translate="skills-tools">Ferramentas</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag st-tool">Git</span>
+                        <span class="skill-tag st-tool">REST APIs</span>
+                        <span class="skill-tag st-tool">Azure Cosmos DB</span>
+                        <span class="skill-tag st-tool">React</span>
+                        <span class="skill-tag st-tool">PostgreSQL</span>
+                        <span class="skill-tag st-tool">OpenAI API</span>
+                        <span class="skill-tag st-tool">PySpark</span>
+                        <span class="skill-tag st-tool">XML</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= EXPERIENCE ======= -->
+    <section id="experience" class="section reveal">
+        <div class="section-inner">
+            <div class="section-label" data-translate="exp-label">// trajetória</div>
+            <h2 class="section-title" data-translate="exp-title">Experiência</h2>
+
+            <div class="timeline">
+                <div class="timeline-item reveal-child">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <div>
+                                <h3 class="tl-role" data-translate="exp-mooddie-role">Software Developer</h3>
+                                <p class="tl-company">Mooddie Digital</p>
+                            </div>
+                            <span class="tl-date" data-translate="exp-mooddie-date">Nov 2025 — Presente</span>
+                        </div>
+                        <p class="tl-desc" data-translate="exp-mooddie-desc">Desenvolvimento e manutenção de uma aplicação web empresarial de grande escala com arquitetura legacy complexa. Foco principal em Java backend — otimização de queries de base de dados, scripting e manipulação de dados XML. Envolvido na integração frontend com HTML, XHTML e componentes React.</p>
+                        <div class="tl-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">React</span>
+                            <span class="tag">XML</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">HTML / XHTML</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-child">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <div>
+                                <h3 class="tl-role" data-translate="exp-cgi-role">Estágio Profissional</h3>
+                                <p class="tl-company">CGI Group</p>
+                            </div>
+                            <span class="tl-date" data-translate="exp-cgi-date">Jun — Nov 2025</span>
+                        </div>
+                        <p class="tl-desc" data-translate="exp-cgi-desc">Desenvolvimento e integração de uma API REST em .NET com Azure Cosmos DB, garantindo comunicação segura entre aplicações internas e armazenamento cloud. Participação na modelação de base de dados, definição de requisitos de escalabilidade, testes de integração e produção de documentação técnica.</p>
+                        <div class="tl-tags">
+                            <span class="tag">.NET</span>
+                            <span class="tag">Azure Cosmos DB</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag">NoSQL</span>
+                            <span class="tag">Cloud</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal-child">
+                    <div class="tl-dot"></div>
+                    <div class="tl-card">
+                        <div class="tl-header">
+                            <div>
+                                <h3 class="tl-role" data-translate="exp-ogma-role">Estágio Curricular</h3>
+                                <p class="tl-company">OGMA</p>
+                            </div>
+                            <span class="tl-date" data-translate="exp-ogma-date">2020</span>
+                        </div>
+                        <p class="tl-desc" data-translate="exp-ogma-desc">Desenvolvimento de uma solução de Business Intelligence em PowerBI para transformar dados empresariais em insights acionáveis. Criação de dashboards interativos com KPIs personalizados, integração de múltiplas fontes de dados e relatórios automáticos para diferentes departamentos.</p>
+                        <div class="tl-tags">
+                            <span class="tag">PowerBI</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">KPIs</span>
+                            <span class="tag">Business Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= PROJECTS ======= -->
+    <section id="projects" class="section reveal">
+        <div class="section-inner">
+            <div class="section-label" data-translate="proj-label">// portfólio</div>
+            <h2 class="section-title" data-translate="proj-title">Projetos</h2>
+
+            <div class="bento-grid">
+                <!-- Featured -->
+                <div class="bento-card bento-featured reveal-child">
+                    <div class="bento-glow"></div>
+                    <span class="bento-badge" data-translate="proj-featured">Destaque</span>
+                    <div class="bento-icon">🛡️</div>
+                    <h3 data-translate="proj-vuln-title">Vulnerability Intelligence Platform</h3>
+                    <p data-translate="proj-vuln-desc">Pipeline automatizado que recolhe vulnerabilidades da API NVD da NIST, as classifica em categorias de produto com um LLM, e oferece uma interface web onde os utilizadores fazem queries em linguagem natural — o modelo converte cada pergunta em SQL e executa-a com validação de segurança.</p>
+                    <div class="bento-stack">
+                        <span>Python</span><span>Django</span><span>PostgreSQL</span><span>OpenAI API</span>
+                    </div>
+                    <a href="https://github.com/Rafael-2002/Trabalho-Final-de-Curso" target="_blank" class="bento-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        GitHub
                     </a>
                 </div>
+
+                <!-- .NET API -->
+                <div class="bento-card reveal-child">
+                    <div class="bento-glow"></div>
+                    <div class="bento-icon">☁️</div>
+                    <h3 data-translate="proj-azure-title">API .NET + Azure</h3>
+                    <p data-translate="proj-azure-desc">REST API empresarial em .NET integrada com Azure Cosmos DB. Arquitetura moderna, comunicação segura entre serviços e preparada para escalar em ambientes enterprise.</p>
+                    <div class="bento-stack">
+                        <span>.NET</span><span>Azure</span><span>Cosmos DB</span><span>NoSQL</span>
+                    </div>
+                </div>
+
+                <!-- PowerBI -->
+                <div class="bento-card reveal-child">
+                    <div class="bento-glow"></div>
+                    <div class="bento-icon">📊</div>
+                    <h3 data-translate="proj-powerbi-title">PowerBI Dashboard</h3>
+                    <p data-translate="proj-powerbi-desc">Solução de BI para a OGMA com dashboards interativos, KPIs em tempo real e integração de múltiplas fontes de dados para suporte à decisão empresarial.</p>
+                    <div class="bento-stack">
+                        <span>PowerBI</span><span>Data Analysis</span><span>KPIs</span>
+                    </div>
+                </div>
+
+                <!-- LP2 Game -->
+                <div class="bento-card reveal-child">
+                    <div class="bento-glow"></div>
+                    <div class="bento-icon">🎮</div>
+                    <h3 data-translate="proj-lp2-title">The Night of the Living Deisi</h3>
+                    <p data-translate="proj-lp2-desc">Protótipo de jogo em Java desenvolvido na UC de LP2, explorando herança, polimorfismo e encapsulamento num ambiente lúdico com diagrama UML incluído.</p>
+                    <div class="bento-stack">
+                        <span>Java</span><span>OOP</span><span>UML</span>
+                    </div>
+                    <a href="https://github.com/Rafael-2002/Projeto-LP2" target="_blank" class="bento-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                </div>
+
+                <!-- AED -->
+                <div class="bento-card reveal-child">
+                    <div class="bento-glow"></div>
+                    <div class="bento-icon">🌍</div>
+                    <h3 data-translate="proj-aed-title">DeisiWorldMeter</h3>
+                    <p data-translate="proj-aed-desc">Aplicação Java que processa dados demográficos globais a partir de ficheiros CSV (cidades, países, população) usando estruturas de dados da UC de AED.</p>
+                    <div class="bento-stack">
+                        <span>Java</span><span>Data Structures</span><span>CSV</span>
+                    </div>
+                    <a href="https://github.com/Rafael-2002/Projeto-AED" target="_blank" class="bento-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                </div>
+
+                <!-- RealEstateAI -->
+                <div class="bento-card bento-full bento-wip reveal-child">
+                    <div class="bento-glow"></div>
+                    <div class="bento-icon">🏠</div>
+                    <div class="bento-content">
+                        <span class="bento-badge bento-badge--wip" data-translate="proj-wip">Em Desenvolvimento</span>
+                        <h3 data-translate="proj-realestate-title">RealEstateAI</h3>
+                        <p data-translate="proj-realestate-desc">Plataforma full-stack de pesquisa imobiliária portuguesa com interface de chat alimentada por IA. Os utilizadores fazem perguntas em linguagem natural — o backend usa Google Gemini para gerar queries PostgreSQL seguras, executá-las e devolver os resultados como property cards.</p>
+                        <div class="bento-stack">
+                            <span>FastAPI</span><span>PostgreSQL</span><span>React</span><span>Google Gemini</span><span>Docker</span><span>pgvector</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ======= CONTACT ======= -->
+    <section id="contact" class="section reveal">
+        <div class="section-inner">
+            <div class="section-label" data-translate="contact-label">// vamos conversar</div>
+            <h2 class="section-title" data-translate="contact-title">Pronto para colaborar?</h2>
+            <p class="contact-intro" data-translate="contact-intro">Estou sempre aberto a novas oportunidades, projetos interessantes e boas conversas sobre tecnologia. Manda uma mensagem!</p>
 
             <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-card-icon">✉️</div>
-                    <h3 data-translate="contact-email-title">Email</h3>
-                    <p data-translate="contact-email-desc">Para oportunidades profissionais e colaborações</p>
-                    <a href="mailto:rafael.lourenco.silva@gmail.com" class="contact-link">
-                        rafael.lourenco.silva@gmail.com
-                    </a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-card-icon">💼</div>
-                    <h3 data-translate="contact-linkedin-title">LinkedIn</h3>
-                    <p data-translate="contact-linkedin-desc">Conecte-se comigo profissionalmente</p>
-                    <a href="https://www.linkedin.com/in/rafael-silva-54a076232" class="contact-link" target="_blank" data-translate="contact-linkedin-link">
-                        Ver Perfil LinkedIn
-                    </a>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-card-icon">🐙</div>
-                    <h3 data-translate="contact-github-title">GitHub</h3>
-                    <p data-translate="contact-github-desc">Explore os meus projetos e código</p>
-                    <a href="https://github.com/Rafael-2002" class="contact-link" target="_blank" data-translate="contact-github-link">
-                        Ver Repositórios
-                    </a>
-                </div>
+                <a href="mailto:rafael.lourenco.silva@gmail.com" class="contact-card reveal-child">
+                    <div class="cc-icon">✉️</div>
+                    <div>
+                        <h3 data-translate="contact-email">Email</h3>
+                        <span>rafael.lourenco.silva@gmail.com</span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/rafael-silva-developer/" target="_blank" class="contact-card reveal-child">
+                    <div class="cc-icon">💼</div>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <span data-translate="contact-linkedin">Ver Perfil</span>
+                    </div>
+                </a>
+                <a href="https://github.com/Rafael-2002" target="_blank" class="contact-card reveal-child">
+                    <div class="cc-icon">🐙</div>
+                    <div>
+                        <h3>GitHub</h3>
+                        <span data-translate="contact-github">Ver Repositórios</span>
+                    </div>
+                </a>
+                <a href="assets/Rafael_Silva_CV.pdf" download class="contact-card reveal-child">
+                    <div class="cc-icon">📄</div>
+                    <div>
+                        <h3 data-translate="contact-cv">Curriculum Vitae</h3>
+                        <span data-translate="contact-cv-sub">Download PDF</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Project Modals -->
-    <div id="modal-vulnerabilidades" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-icon">🛡️</div>
-            <h3 data-translate="modal-vuln-title">Sistema de Classificação de Vulnerabilidades</h3>
-            <p><strong data-translate="modal-description">Descrição:</strong> <span data-translate="modal-vuln-desc">Este projeto representa o culminar da minha formação académica e consistiu no desenvolvimento de uma solução inovadora para monitorização e classificação automática de vulnerabilidades de segurança informática.</span></p>
-            <p><strong data-translate="modal-objective">Objetivo:</strong> <span data-translate="modal-vuln-objective">Criar uma aplicação web que integra Automação Inteligente de Processos (IPA) com Modelos de Linguagem (LLM), permitindo a recolha contínua de vulnerabilidades da API oficial do NVD, a sua categorização automática e a disponibilização de dashboards interativos para equipas de segurança.</span></p>
-            <p><strong data-translate="modal-features">Principais Funcionalidades:</strong></p>
-            <ul>
-                <li data-translate="modal-vuln-feature1">Extração automatizada de vulnerabilidades diretamente da API oficial do NVD</li>
-                <li data-translate="modal-vuln-feature2">Classificação inteligente com IA, utilizando um LLM para atribuição automática de categorias</li>
-                <li data-translate="modal-vuln-feature3">Consultas em linguagem natural, como: "Quais são as vulnerabilidades críticas deste mês?"</li>
-                <li data-translate="modal-vuln-feature4">Dashboard interativo com estatísticas, evolução temporal e categorias mais afetadas</li>
-                <li data-translate="modal-vuln-feature5">Armazenamento em base de dados relacional para histórico e análises detalhadas</li>
-                <li data-translate="modal-vuln-feature6">Sistema de início de sessão e personalização de preferências para relatórios adaptados ao utilizador</li>
-            </ul>
-            <p><strong data-translate="modal-innovation">Inovação e Impacto:</strong> <span data-translate="modal-vuln-innovation">Esta solução destaca-se pela sua proatividade, escalabilidade e custo-eficiência, oferecendo às organizações uma alternativa acessível às plataformas comerciais de cibersegurança. Automatiza tarefas repetitivas e morosas, ao mesmo tempo que apoia a tomada de decisão estratégica, libertando equipas técnicas para atividades de maior valor acrescentado.</span></p>
-            <div class="modal-tags">
-                <span class="modal-tag">Django</span>
-                <span class="modal-tag">Python</span>
-                <span class="modal-tag">Machine Learning</span>
-                <span class="modal-tag">Cybersecurity</span>
-                <span class="modal-tag">Data Analysis</span>
-                <span class="modal-tag">Web Development</span>
-            </div>
-            <a href="https://github.com/Rafael-2002/Trabalho-Final-de-Curso.git" class="github-btn" target="_blank">
-                <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                <span data-translate="github-btn">Ver no GitHub</span>
-            </a>
+    <!-- ======= FOOTER ======= -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <span class="footer-logo">&lt;RS/&gt;</span>
+            <p><span data-translate="footer-text">Feito com 💜 por Rafael Silva · </span><span id="footerYear"></span></p>
+            <a href="#home" class="footer-top" data-translate="footer-back">Voltar ao topo ↑</a>
         </div>
-    </div>
-
-    <div id="modal-powerbi" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-icon">📊</div>
-            <h3 data-translate="modal-powerbi-title">Dashboard PowerBI - OGMA</h3>
-            <p><strong data-translate="modal-powerbi-internship">Estágio Curricular - OGMA (2020)</strong></p>
-            <p data-translate="modal-powerbi-intro">Durante o meu estágio curricular na OGMA, desenvolvi uma solução completa de Business Intelligence para transformar dados empresariais em insights acionáveis.</p>
-            <p><strong data-translate="modal-context">Contexto:</strong> <span data-translate="modal-powerbi-context">A empresa necessitava de uma forma mais eficaz de monitorizar performance e tomar decisões baseadas em dados em tempo real.</span></p>
-            <p><strong data-translate="modal-solution">Solução desenvolvida:</strong></p>
-            <p data-translate="modal-powerbi-solution">• Criação de dashboards interativos com indicadores de desempenho (KPIs) personalizados<br>
-                • Integração de múltiplas fontes de dados empresariais<br>
-                • Monitorização em tempo real de métricas críticas de negócio<br>
-                • Modelação de dados para garantir qualidade e consistência da informação<br>
-                • Relatórios visuais automatizados para diferentes departamentos<br>
-                • Interface intuitiva para utilizadores não técnicos</p>
-            <p data-translate="modal-powerbi-result">O projeto resultou numa significativa melhoria na capacidade de análise e tomada de decisão da empresa, permitindo identificar tendências e oportunidades de otimização que antes não eram visíveis.</p>
-            <div class="modal-tags">
-                <span class="modal-tag">PowerBI</span>
-                <span class="modal-tag">Data Visualization</span>
-                <span class="modal-tag">Business Intelligence</span>
-                <span class="modal-tag">KPIs</span>
-                <span class="modal-tag">Data Modeling</span>
-                <span class="modal-tag">Dashboard Design</span>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-azure-api" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-icon">☁️</div>
-            <h3 data-translate="modal-azure-title">API .NET com Azure Cosmos DB</h3>
-            <p><strong data-translate="modal-azure-internship">Estágio Profissional - CGI Group (2025-Presente)</strong></p>
-            <p data-translate="modal-azure-intro">Como parte do meu estágio profissional na CGI Group, estou envolvido no desenvolvimento e integração de uma API robusta em .NET com Azure Cosmos DB.</p>
-            <p><strong data-translate="modal-objective">Objetivo:</strong> <span data-translate="modal-azure-objective">Criar uma solução escalável e performante para comunicação segura entre aplicações e base de dados na cloud, adequada para ambientes empresariais de grande escala.</span></p>
-            <p><strong data-translate="modal-responsibilities">Principais responsabilidades:</strong></p>
-            <p data-translate="modal-azure-responsibilities">• Desenvolvimento de API RESTful em .NET com arquitetura moderna<br>
-                • Integração com Azure Cosmos DB para armazenamento NoSQL de alta performance<br>
-                • Garantia de comunicação segura entre aplicações e base de dados<br>
-                • Colaboração na modelação da base de dados otimizada para escalabilidade<br>
-                • Definição de requisitos de performance para suportar operações empresariais<br>
-                • Implementação de testes funcionais e de integração<br>
-                • Documentação técnica detalhada para equipas internas</p>
-            <p data-translate="modal-azure-impact">Este projeto permite-me aplicar conhecimentos de cloud computing, arquitetura de microservices e desenvolvimento enterprise-grade, contribuindo para soluções que impactam diretamente as operações de grandes empresas.</p>
-            <div class="modal-tags">
-                <span class="modal-tag">.NET</span>
-                <span class="modal-tag">Azure Cosmos DB</span>
-                <span class="modal-tag">Cloud Computing</span>
-                <span class="modal-tag">Microservices</span>
-                <span class="modal-tag">REST API</span>
-                <span class="modal-tag">NoSQL</span>
-                <span class="modal-tag">Enterprise</span>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-lp2" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-icon">🎮</div>
-            <h3 data-translate="modal-lp2-title">Projeto LP2 — The Night of the Living Deisi</h3>
-            <p><strong data-translate="modal-description">Descrição:</strong> <span data-translate="modal-lp2-desc">Protótipo de jogo em Java desenvolvido no âmbito da unidade curricular de Linguagens de Programação II. O projeto explora conceitos fundamentais de programação orientada a objetos, como herança, encapsulamento e polimorfismo, aplicados num ambiente lúdico.</span></p>
-            <p><strong data-translate="modal-structure">Estrutura do Projeto:</strong></p>
-            <ul>
-                <li data-translate="modal-lp2-structure1"><strong>Tabuleiro</strong>: classe principal que gere jogadores, equipamentos e portas.</li>
-                <li data-translate="modal-lp2-structure2"><strong>Jogador</strong>: classe base com subclasses como <em>Zombie</em> e <em>Adulto</em>.</li>
-                <li data-translate="modal-lp2-structure3"><strong>Equipamento</strong>: inclui itens como <em>Escudo</em> e <em>Espada</em>.</li>
-                <li data-translate="modal-lp2-structure4"><strong>Porta</strong>: funciona como <em>Safe Haven</em>, protegendo os jogadores que entram nela.</li>
-                <li data-translate="modal-lp2-structure5"><strong>Diagrama UML</strong>: representa a estrutura e relações entre classes.</li>
-            </ul>
-            <p><strong data-translate="modal-extra-resources">Recursos Extra:</strong> <span data-translate="modal-lp2-extra">O repositório inclui um diagrama UML e um <a href="https://youtu.be/b_oXaFSem04" target="_blank">vídeo demonstrativo no YouTube</a>.</span></p>
-            <div class="modal-tags">
-                <span class="modal-tag">Java</span>
-                <span class="modal-tag">OOP</span>
-                <span class="modal-tag">Game Development</span>
-                <span class="modal-tag">University Project</span>
-            </div>
-            <a href="https://github.com/Rafael-2002/Projeto-LP2" class="github-btn" target="_blank">
-                <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                <span data-translate="github-btn">Ver no GitHub</span>
-            </a>
-        </div>
-    </div>
-
-    <div id="modal-aed" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-icon">📊</div>
-            <h3 data-translate="modal-aed-title">Projeto AED — DeisiWorldMeter</h3>
-            <p><strong data-translate="modal-description">Descrição:</strong> <span data-translate="modal-aed-desc">Projeto académico desenvolvido em Java na disciplina de Algoritmos e Estruturas de Dados (AED), com foco no tratamento e visualização de dados demográficos provenientes de ficheiros CSV.</span></p>
-            <p><strong data-translate="modal-components">Componentes do Projeto:</strong></p>
-            <ul>
-                <li data-translate="modal-aed-component1">Leitura e processamento de ficheiros CSV: <code>cidades.csv</code>, <code>paises.csv</code>, <code>populacao.csv</code>.</li>
-                <li data-translate="modal-aed-component2">Classe principal na estrutura `src/pt/ulusofona/aed/deisiworldmeter` que provavelmente implementa estruturas como filas ou listas encadeadas (AED).</li>
-                <li data-translate="modal-aed-component3">Objetivo: cálculo, visualização ou manipulação de dados populacionais e demográficos.</li>
-                <li data-translate="modal-aed-component4"><strong>Demo em vídeo:</strong> disponível no YouTube.</li>
-            </ul>
-            <p><strong data-translate="modal-extra-resources">Recursos Extra:</strong> <span data-translate="modal-aed-extra">Demonstração em vídeo: <a href="https://youtu.be/7SM6i9sqWx0" target="_blank">Ver no YouTube</a>.</span></p>
-            <div class="modal-tags">
-                <span class="modal-tag">Java</span>
-                <span class="modal-tag">Data Processing</span>
-                <span class="modal-tag">AED</span>
-                <span class="modal-tag">University Project</span>
-            </div>
-            <a href="https://github.com/Rafael-2002/Projeto-AED" class="github-btn" target="_blank">
-                <svg class="github-icon" viewBox="0 0 24 24" fill="currentColor">
-                    <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                <span data-translate="github-btn">Ver no GitHub</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; <span data-translate="footer-text">Feito por Rafael Silva ❤️</span></p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
